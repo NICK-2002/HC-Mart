@@ -7,7 +7,7 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     int days = 45;
     var arr = "its my first app";
-    var fu = 2.14;
+    var fu = 4.14;
     double s = 3.14;
     return Scaffold(
       appBar: AppBar(
