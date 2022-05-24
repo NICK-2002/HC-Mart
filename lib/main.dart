@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         //primaryTextTheme: GoogleFonts.latoTextTheme(),
      ) ,
       //theme: ThemeData(primarySwatch: Colors.orange),
+      debugShowCheckedModeBanner: false,
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
