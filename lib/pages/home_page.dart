@@ -13,7 +13,7 @@ class Homepage extends StatelessWidget {
     double s = 3.14;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Catlog app"),
+        title: Text("Catalog App"),
       ),
       body: Center(
         child: Container(
