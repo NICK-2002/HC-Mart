@@ -19,15 +19,18 @@ class Item {
   final String color;
   final String image;
 
-  Item({this.id, this.name, this.desc, this.price, this.color, this.image});
+  Item({required this.id, required this.name, required this.desc, required this.price, required this.color, required this.image});
   // ignore: empty_constructor_bodies
-  factory Item.fromMap(Map<String,dynamic> map){
-    Item(
-      id: map["id"],
-      name: map["name"],
-      desc:, price, color, image
-      );
+  //factory Item.fromMap(Map<String,dynamic> map){
+    //Item(
+      //id: map["id"],
+      //name: map["name"],
+      //desc: map["desc"], 
+      //price: map["price"], 
+      //color: map["color"], 
+      //image: map["image"],
+      //);
   }
 
   
-}
+//}
