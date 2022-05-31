@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -22,7 +21,7 @@ class _HomepageState extends State<Homepage> {
   }
 
   loadData() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 0));
     final catalogJson =
         await rootBundle.loadString("assests/files/catalog.json");
     print(catalogJson);
@@ -44,7 +43,45 @@ class _HomepageState extends State<Homepage> {
           padding: const EdgeInsets.all(16.0),
           // ignore: unnecessary_null_comparison
           child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-              ? ListView.builder(
+              ? GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 20,
+                    crossAxisSpacing: 20,
+                  ),
+                  itemBuilder: (context, Index) {
+                    final item = CatalogModel.items[Index];
+                    return Card(
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(
+                        borderRadius:BorderRadius.circular(10) ),
+                      child: GridTile(
+                        header: Container(
+                          child: Text(
+                            item.name,
+                            style: TextStyle(color: Colors.white),),
+                            padding: const EdgeInsets.all(2),
+                            decoration: BoxDecoration(
+                              color: Colors.deepPurple,
+                            )
+                        ),
+                        child: Image.network(item.image),
+                        footer: Container(
+                          child: Text(
+                            item.price.toString(),
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          padding: const EdgeInsets.all(2),
+                          decoration: BoxDecoration(
+                            color: Colors.grey,
+ ),
+                        ),
+                        ));
+                  },
+                  itemCount: CatalogModel.items.length,
+                )
+                /*
+                ListView.builder(
                   itemCount: CatalogModel.items.length,
                   itemBuilder: (context, index) {
                     return ItemWidget(
@@ -52,6 +89,7 @@ class _HomepageState extends State<Homepage> {
                     );
                   },
                 )
+                */
               : Center(
                   child: CircularProgressIndicator(),
                 )),
