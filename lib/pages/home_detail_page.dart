@@ -20,9 +20,9 @@ class HomeDetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: Mytheme.creamcolor,
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
                 buttonPadding: EdgeInsets.zero,
@@ -31,7 +31,8 @@ class HomeDetailPage extends StatelessWidget {
                   ElevatedButton(
                     onPressed: (){}, 
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Mytheme.darkBluishcolor),
+                      // ignore: deprecated_member_use
+                      backgroundColor: MaterialStateProperty.all(context.theme.buttonColor),
                       shape: MaterialStateProperty.all(StadiumBorder(),),
                     ),
       
@@ -55,11 +56,12 @@ class HomeDetailPage extends StatelessWidget {
               edge: VxEdge.TOP,
 
               child: Container(
-                color: Colors.white,
+                color: context.cardColor,
                 width: context.screenWidth,
                 child: Column(children: [
                   catalog.name.text.xl4
-                      .color(Mytheme.darkBluishcolor)
+                      // ignore: deprecated_member_use
+                      .color(context.accentColor)
                       .bold
                       .make(),
                   catalog.desc.text.textStyle(context.captionStyle).xl.make(),
