@@ -10,13 +10,10 @@ import 'package:flutter_application_1/models/cart.dart';
 import 'package:flutter_application_1/utilis/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-import 'package:flutter_application_1/widgets/theme.dart';
-
 import '../models/catalog.dart';
-import '../widgets/drawer.dart';
 import '../widgets/home_widgets/catalog_header.dart';
 import '../widgets/home_widgets/catalog_list.dart';
-import '../widgets/item_widget.dart';
+import 'package:http/http.dart' as http;
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -26,6 +23,8 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  final url = "https://api.jsonbin.io/b/604dbddb683e7e079c4eefd3";
+
   @override
   void initState() {
     super.initState();
@@ -36,6 +35,10 @@ class _HomepageState extends State<Homepage> {
     await Future.delayed(Duration(seconds: 0));
     final catalogJson =
         await rootBundle.loadString("assests/files/catalog.json");
+    
+    //By http
+    //final response = await http.get(Uri.parse(url));
+    //final catalogJson = response.body;
     print(catalogJson);
     final decodedData = jsonDecode(catalogJson);
     var productsData = decodedData["products"];
