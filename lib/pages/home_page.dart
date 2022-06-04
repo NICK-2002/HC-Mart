@@ -5,6 +5,8 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/core/store.dart';
+import 'package:flutter_application_1/models/cart.dart';
 import 'package:flutter_application_1/utilis/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -45,14 +47,28 @@ class _HomepageState extends State<Homepage> {
 
   @override
   Widget build(BuildContext context) {
+    final _cart = (VxState.store as MyStore).cart;
     return Scaffold(
         backgroundColor: context.canvasColor,
-        floatingActionButton: FloatingActionButton(
-          onPressed: ()=> Navigator.pushNamed(context, Myroutes.cartRoute),
-          // ignore: deprecated_member_use
-          backgroundColor: context.theme.buttonColor,
-          child: Icon(CupertinoIcons.cart,color: Colors.white,
-          )),
+        floatingActionButton: VxBuilder(
+          // ignore: prefer_const_literals_to_create_immutables
+          mutations: {AddMutation, RemoveMutation},
+          builder: (ctx, _) => FloatingActionButton(
+              onPressed: () => Navigator.pushNamed(context, Myroutes.cartRoute),
+              // ignore: deprecated_member_use
+              backgroundColor: context.theme.buttonColor,
+              child: Icon(
+                CupertinoIcons.cart,
+                color: Colors.white,
+              )).badge(
+              color: Vx.purple600,
+              size: 22,
+              count: _cart.items.length,
+              textStyle: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              )),
+        ),
         body: SafeArea(
           child: Container(
             padding: Vx.m32,
@@ -64,8 +80,7 @@ class _HomepageState extends State<Homepage> {
                       CatalogModel.items.isNotEmpty)
                     CatalogList().py16().expand()
                   else
-                      CircularProgressIndicator().centered().expand(),
-                    
+                    CircularProgressIndicator().centered().expand(),
                 ]),
           ),
         ));
