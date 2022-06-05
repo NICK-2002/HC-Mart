@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utilis/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-
-
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -21,17 +19,15 @@ class _LoginPageState extends State<LoginPage> {
 
   moveToHome(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
-      
-    
-    setState(() {
-      changeButton = true;
-    });
+      setState(() {
+        changeButton = true;
+      });
 
-    await Future.delayed(Duration(seconds: 1));
-    await Navigator.pushNamed(context, Myroutes.homeRoute);
-    setState(() {
-      changeButton = false;
-    });
+      await Future.delayed(Duration(seconds: 1));
+      await Navigator.pushNamed(context, Myroutes.homeRoute);
+      setState(() {
+        changeButton = false;
+      });
     }
   }
 
@@ -39,7 +35,6 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Material(
         color: context.canvasColor,
-
         child: SingleChildScrollView(
           child: Form(
             key: _formKey,
@@ -94,8 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                         validator: (value) {
                           if (value!.isEmpty) {
                             return "Password is not empty";
-                          }
-                          else if(value.length<6){
+                          } else if (value.length < 6) {
                             return "Password length should be atleat 6";
                           }
                           return null;
@@ -133,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
                       )
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
