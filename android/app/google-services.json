@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "55038693450",
+    "project_id": "hc-mart",
+    "storage_bucket": "hc-mart.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55038693450:android:79a23fe4863e364ec696b3",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55038693450-o37v3k3t42mklf8trj80jggucsnhp97n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-1PxUuVzbxkTg_DTV0eEcPMDiRsMq5Pc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55038693450-o37v3k3t42mklf8trj80jggucsnhp97n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
