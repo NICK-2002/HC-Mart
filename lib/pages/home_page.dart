@@ -52,6 +52,7 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     final _cart = (VxState.store as MyStore).cart;
     return Scaffold(
+
         backgroundColor: context.canvasColor,
         floatingActionButton: VxBuilder(
           // ignore: prefer_const_literals_to_create_immutables
@@ -86,6 +87,8 @@ class _HomepageState extends State<Homepage> {
                     CircularProgressIndicator().centered().expand(),
                 ]),
           ),
-        ));
+        ),
+        drawer: Drawer(),
+        );
   }
 }

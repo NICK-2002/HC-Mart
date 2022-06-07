@@ -16,6 +16,7 @@ class catalogHeader extends StatelessWidget {
         // ignore: deprecated_member_use
         "Catalog App".text.xl5.bold.color(context.theme.accentColor).make(),
         "Trending Products".text.xl2.make(),
+      
       ],
     );
   }
