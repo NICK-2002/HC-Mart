@@ -6,6 +6,7 @@ A new Flutter project.
 # HC MART is a shopping cart application
 # Flutter is used in it.
 #This app contain related to UI, Data, Model, API, State Management, Navigator 2.0
+
 ![hc mart 6](https://user-images.githubusercontent.com/82725865/173225321-a3e717b2-a167-4158-afa6-1f456bf07a91.png)
 ![hc mart 5](https://user-images.githubusercontent.com/82725865/173225325-cc31a468-da17-4f35-853c-0a8527da8b2a.png)
 ![hc mart 4](https://user-images.githubusercontent.com/82725865/173225326-66f0051b-4008-4c0c-9c2c-cadcd6001b7b.png)
